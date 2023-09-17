@@ -1,69 +1,193 @@
-body{
-    background-color: rgb(24, 24, 24);
-    width: 100%;
+:root {
+    --secondry-color: #131616;
+    --primary-color: #da0000;
+  }
+
+  
+  body {
+    background-color: var(--secondry-color);
     color: white;
-    font-family: bahnschrift;
-}
+    font-family: Bahnschrift;
+    
+  }
 
 
-.intro{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    z-index: 10;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    animation-name: example;
-    animation-duration: 4s;
 
-}
-
-.vid-pc{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-}
-
-.tool-bar{
-    height: 60px;
-    width: 100%;
-    padding-left: 10%;
-    z-index: 2;
-    display: flex;
-    background-color: rgb(24, 24, 24);
-    box-shadow: 5px 5px 5px black;
-    align-items: center;
-}
-
-.main-pc{
-    height: auto;
+  .thumbnail-div{
+    background-image: url("https://wallpapers.com/images/hd/demon-slayer-nezuko-and-tanjiro-edu9krggeakf45er.jpg");
+    background-size:cover;
+    height: 80vh;
     width: 80%;
-    padding: 50px;
-    margin: 50px 10% 0px 10%;
-    box-shadow: 5px 5px 15px black;
-   
-}
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 33px;
+    margin-top: 30px;
+    box-shadow: 5px 5px 20px black;
+  }
 
-.main-pc-left{
-    justify-content: center;
-    text-align: left;
-    padding-left: 150px;
-}
 
-.download-div{
-    width: 90%;
-    margin-left: 5%;
-    height: auto;
-    margin-right: 5%;
-    padding: 30px;
-    margin-top: 20px;
+  .header{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: rgb(24, 24, 24);;
-    box-shadow: 5px 5px 15px black;
+    margin-top: 40px;
+    padding-top: 30px;
+    margin: 50px;
+  }
+
+  .category-text{
+    font-weight:100;
+    margin-right: 20px;
+      
 }
+
+.search-bar{
+    height: 40px; padding-right: 50px;
+     padding-left: 20px;
+     background-color: transparent;
+    border: solid 2px rgba(255, 255, 255, 0.534);
+     color: rgba(156, 156, 156, 0.534);
+     border-radius: 400px;
+      float: right;
+}
+
+      
+
+.details-div{
+    margin-left: 120px;
+    margin-top: 100px;
+}
+
+.button{
+    padding: 10px 40px 10px 40px;
+    border-radius: 3px;
+    background-color: white;
+    border: 2px solid white;
+    color: black;
+    margin-top: 50px;
+    transition: 0.8s;
+
+}
+
+.button-view{
+  padding: 0px 20px 0px 20px;
+  border-radius: 3px;
+  background-color: white;
+  border: 2px solid white;
+  margin-left: 5px;
+  color: black;
+  transition: 0.8s;
+
+}
+
+.button:hover{
+    background-color: rgba(255, 255, 255, 0.212);
+    border: 2px solid white;
+    color: white;
+}
+
+.button2{
+    padding: 10px 40px 10px 40px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.486);
+    border: 2px solid rgba(255, 255, 255, 0.486);
+    color: white;
+    font-weight: bold;
+    margin-top: 50px;
+    transition: 0.8s;
+
+}
+
+.button2:hover{
+    background-color: transparent;
+}
+
+
+.vert-hr{
+    width: 1px;
+    height: 50px;
+    margin-right: 20px;
+    background-color: rgba(128, 128, 128, 0.411);
+}
+
+
+.home-page-content{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 50px;
+}
+
+.recycle-div{
+    overflow-x: scroll;
+    width: 100%;
+    display: flex;
+    white-space:normal;
+
+
+}
+
+#top-trending-list {
+    height: 90px; /* 40px - more place for scrollbar, is hidden under parent box */
+    padding: 5px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.anime-card {
+    width: 300px;
+    height: 180px;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-top: 10px;
+    display: inline-flex;
+    min-width: 300px;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .anime-card-thumb {
+    width: 220px;
+    height: 120px;
+    box-shadow: 5px 5px 10px black;
+    border-radius: 2px;
+    margin-right: 20px;
+    margin-top: 10px;
+  }
+
+  
+  
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background:  var(--secondry-color);
+    border-radius: 20px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+  .title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
