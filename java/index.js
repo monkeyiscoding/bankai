@@ -24,6 +24,8 @@ window.onresize = function() {
 
   if(width < 1110){
     $(".category-text").css("display","none")
+    $(".juju").css("display","none")
+    $(".button").html("Download")
   }
 
   else{
