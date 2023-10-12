@@ -9,13 +9,29 @@ const firebaseConfig = {
   measurementId: "G-T99R64GE48",
 };
 
+
+
 firebase.initializeApp(firebaseConfig);
 
+var dataRef = firebase.database().ref("Top");
 
-  var dataRef = firebase.database().ref("Top");
+var width = screen.width
+
+window.onresize = function() { 
+          
+  width = screen.width
+  loadTop()
+
+  if(width < 1110){
+    $(".category-text").css("display","none")
+  }
+}; 
+
+loadTop()
 
 
-  dataRef.on("value", function (snapshot) {
+  function loadTop(){
+     dataRef.on("value", function (snapshot) {
       if(snapshot.exists()){
     
           var title = snapshot.val().title
@@ -24,14 +40,23 @@ firebase.initializeApp(firebaseConfig);
           var language = snapshot.val().language
           var imdb = snapshot.val().imdb
           var thumbnail = snapshot.val().thumbnail
-          
+          var poster = snapshot.val().poster
+
 
           $("#title").html(title)
           $("#des").html(des)
           $("#language").html(language)
           $("#story").html(story)
           $("#imdb").html(imdb.replace("IMDB",""))
-          $(".thumbnail-div").css("background-image","url("+thumbnail+")")
+         
+          if(width < 1110){
+            $(".thumbnail-div").css("background-image","url("+poster+")")
+          }
+
+          else{
+            $(".thumbnail-div").css("background-image","url("+thumbnail+")")
+          }
+
     
       }
 
@@ -40,6 +65,8 @@ firebase.initializeApp(firebaseConfig);
       
     });
 
+  }
+ 
  
       var query = firebase
       .database()
