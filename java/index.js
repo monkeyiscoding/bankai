@@ -25,6 +25,10 @@ window.onresize = function() {
   if(width < 1110){
     $(".category-text").css("display","none")
   }
+
+  else{
+    $(".category-text").css("display","block")
+  }
 }; 
 
 loadTop()
